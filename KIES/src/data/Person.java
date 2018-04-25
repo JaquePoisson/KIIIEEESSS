@@ -1,10 +1,26 @@
 package data;
 
+import java.util.ArrayList;
+
 public class Person {
-	private String vorname;
-	private String nachname;
-	private boolean female;
 	
+	private static ArrayList<Person> personenListe = new ArrayList<Person>();
+	
+	
+	private String vorname = null;
+	private String nachname = null;
+	private boolean female = false;
+	
+	
+	
+	public Person(String vorname, String nachname, boolean female) {
+		super();
+		this.vorname = vorname;
+		this.nachname = nachname;
+		this.female = female;
+		personenListe.add(this);
+	}
+
 	@Override
 	public String toString() {
 		return (isFemale() ? "Frau" : "Mann") + " " + getVorname() + " " + getNachname();
@@ -33,5 +49,14 @@ public class Person {
 	public void setNachname(String nachname) {
 		this.nachname = nachname;
 	}
+	
+	public static ArrayList<Person> getPersonenListe() {
+		return personenListe;
+	}
+
+	public static void setPersonenListe(ArrayList<Person> personenListe) {
+		Person.personenListe = personenListe;
+	}
+
 	
 }
