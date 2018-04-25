@@ -19,7 +19,7 @@ public class Prog {
 		Student s1 = new Student("Paul","Fischill",false, 10);
 		System.out.println(s1);
 		
-		for(Object p: Person.getPersonenListe()) {
+		for(Person p: Person.getPersonenListe()) {
 			System.out.println(p);
 			if(p instanceof Student) {
 				Student s = (Student) p;
